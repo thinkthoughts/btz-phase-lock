@@ -186,3 +186,8 @@ constraint → signal > noise
 structure → stability  
 
 45° 📐
+
+---
+<p align="center">
+  <img src="./bottom_banner.png" alt="btz-phase-lock banner" />
+</p>

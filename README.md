@@ -38,8 +38,12 @@ Adds derivative constraint to match **slope (structure)**, not just values.
 </p>
 
 <p align="center">
-  v18: observables + metric align (value fit)<br/>
-  v19: derivative constraint → slope matches (structure)
+  v18: value fit (observables + metric)<br/>
+  v19: structure fit (adds derivative constraint)<br/>
+  <br/>
+  bottom row contrast:<br/>
+  v18 → optimization signal (loss)<br/>
+  v19 → geometric signal (derivative)
 </p>
 
 ---

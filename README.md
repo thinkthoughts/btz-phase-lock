@@ -29,6 +29,36 @@ Adds derivative constraint to match **slope (structure)**, not just values.
 
 ---
 
+## 🔬 Minimal separating probe: values → structure
+
+<h2>📊 Results (v19)</h2>
+
+<p><b>Held-out test:</b><br/>
+train on c = 0.00, 0.30 → predict c = 0.16
+</p>
+
+<p align="center">
+  <img src="./v19_observables.png" width="32%" />
+  <img src="./v19_metric.png" width="32%" />
+  <img src="./v19_derivative.png" width="32%" />
+</p>
+
+<p align="center">
+  <b>Observables</b> — EE ⊕ WL ⊕ GEO align<br/>
+  <b>Metric</b> — geometry recovers<br/>
+  <b>Derivative</b> — slope matches (new)
+</p>
+
+<p align="center">
+  observables ✔ &nbsp;&nbsp; metric ✔ &nbsp;&nbsp; derivative ✔  
+  <br/>
+  → value fit → shape fit  
+  <br/>
+  → ambiguity reduced under minimal constraint
+</p>
+
+---
+
 ### v18.1 — Multi-Slice Discriminator
 Train on multiple slices → test held-out interpolation.
 

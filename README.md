@@ -78,7 +78,7 @@ Probe sweep across subsets of (EE, WL, GEO) with optional derivative constraint.
 <h2>🔬 v18 → v19: value fit → shape fit</h2>
 
 <p align="center">
-  <img src="./v18_v19_comparison.png" alt="v18 to v19 comparison panel" width="100%" />
+  <img src="./images/v18_v19_comparison.png" alt="v18 to v19 comparison panel" width="100%" />
 </p>
 
 <p align="center">
@@ -99,9 +99,9 @@ train on c = 0.00, 0.30 → predict c = 0.16
 </p>
 
 <p align="center">
-  <img src="./v19_observables.png" width="32%" />
-  <img src="./v19_metric.png" width="32%" />
-  <img src="./v19_derivative.png" width="32%" />
+  <img src="./images/v19_observables.png" width="32%" />
+  <img src="./images/v19_metric.png" width="32%" />
+  <img src="./images/v19_derivative.png" width="32%" />
 </p>
 
 <p align="center">

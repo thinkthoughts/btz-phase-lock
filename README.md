@@ -31,6 +31,19 @@ Adds derivative constraint to match **slope (structure)**, not just values.
 
 ## 🔬 Minimal separating probe: values → structure
 
+<h2>🔬 v18 → v19: value fit → shape fit</h2>
+
+<p align="center">
+  <img src="./images/v18_v19_comparison.png" alt="v18 to v19 comparison panel" width="100%" />
+</p>
+
+<p align="center">
+  v18: observables + metric align (value fit)<br/>
+  v19: derivative constraint → slope matches (structure)
+</p>
+
+---
+
 <h2>📊 Results (v19)</h2>
 
 <p><b>Held-out test:</b><br/>

@@ -1,14 +1,23 @@
-# btz-phase-lock
+<p align="center">
+  <img src="./banner.png" alt="btz-phase-lock banner" />
+</p>
+
+<h1 align="center">btz-phase-lock</h1>
+
+<p align="center">
+  constraint → signal > noise → structure
+</p>
+
+---
 
 Minimal constraint-first reconstruction experiments for BTZ / AdS geometries using neural surrogates.
 
-Core idea:
+Core idea:  
 multiple probes (EE ⊕ WL ⊕ GEO)  
 → constrain geometry  
 → signal > noise  
 
 45° 📐
-
 ---
 
 ## 🚀 Start Here

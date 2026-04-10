@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{float}
+
+\title{\textbf{Minimal Identifying Sets for Geometry Reconstruction}\\
+under Multi-Probe Constraints}
+\author{Dan Hawkley}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study constraint-first reconstruction using a shared multi-slice neural surrogate trained on multiple probe observables. Prior results show that value matching alone leaves residual ambiguity: distinct geometries can fit the same observables. We introduce derivative-sensitive constraints to enforce local structure and perform a systematic probe sweep over subsets of three observables—EE, WL, and GEO.
+
+In a synthetic held-out setting, we find that the minimal identifying set is EE $\oplus$ GEO $\oplus$ derivative. This configuration achieves the lowest held-out metric error, while the full probe stack is not minimal and WL is not required for optimal reconstruction. The results show that derivative information is necessary for structure, and that identifying sets can be strictly smaller than the available probe family.
+\end{abstract}
+
+\section{Introduction}
+
+A recurring problem in reconstruction is the gap between value fit and structure fit. A model may reproduce observables while failing to uniquely recover geometry.
+
+Project progression:
+\begin{itemize}
+\item v17: indistinguishable observables
+\item v18: multi-slice reduces ambiguity
+\item v19: derivative enforces structure
+\item v20: probe sweep identifies minimal set
+\end{itemize}
+
+Our answer, in this setup, is:
+\[
+\boxed{\text{EE} \oplus \text{GEO} \oplus d}
+\]
+
+\section{Probe Sweep (v20)}
+
+We evaluate probe subsets using:
+\begin{itemize}
+\item held-out metric MSE
+\item held-out derivative MSE
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/v20_value_vs_shape.png}
+\caption{Held-out value fit versus shape fit across probe sets. Derivative-enabled configurations collapse toward low-error structure.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/v20_metric_error_by_config.png}
+\caption{Held-out metric error by configuration. The lowest-error configuration is EE+GEO+d.}
+\end{figure}
+
+\section{Best Configuration}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/v20_best_observables.png}
+\caption{Observables}
+\end{subfigure}
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/v20_best_metric.png}
+\caption{Metric}
+\end{subfigure}
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/v20_best_derivative.png}
+\caption{Derivative}
+\end{subfigure}
+\caption{Held-out reconstruction for EE+GEO+d. Observables align, geometry recovers, and derivative confirms structure.}
+\end{figure}
+
+\section{Conclusion}
+
+We show:
+\begin{itemize}
+\item value fit alone is insufficient
+\item derivative is necessary for structure
+\item minimal identifying set is smaller than full probe set
+\end{itemize}
+
+\[
+\boxed{\text{EE} \oplus \text{GEO} \oplus d}
+\]
+
+\end{document}

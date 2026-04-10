@@ -34,7 +34,7 @@ Adds derivative constraint to match **slope (structure)**, not just values.
 <h2>🔬 v18 → v19: value fit → shape fit</h2>
 
 <p align="center">
-  <img src="./images/v18_v19_comparison.png" alt="v18 to v19 comparison panel" width="100%" />
+  <img src="./v18_v19_comparison.png" alt="v18 to v19 comparison panel" width="100%" />
 </p>
 
 <p align="center">

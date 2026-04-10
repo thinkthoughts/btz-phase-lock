@@ -1,110 +1,47 @@
-# BTZ Phase-Lock Demo
+# btz-phase-lock
 
-Minimal Colab-ready demo inspired by arXiv:2604.05970  
-Constraint-first reconstruction of BTZ geometry using dual neural networks.
+Minimal constraint-first reconstruction experiments for BTZ / AdS geometries using neural surrogates.
 
----
-
-## Overview
-
-This demo implements a simplified **phase-lock setup**:
-
-- Two tanh MLPs:
-  - **L(x, ℓ)** → learns latent geometry (surface / turning point)
-  - **V(r)** → learns metric function f(r)
-
-- Alternating optimization (Adam):
-  - RT (Ryu–Takayanagi) loss
-  - EE (entanglement entropy)
-  - WL (Wilson loops)
-  - regularization + phase-lock balance
-
----
-
-## Key Idea
-
-Single constraints give partial information:
-
-- EE → reconstructs radial structure  
-- WL → complementary probe  
-
-Combined:
-
-EE ⊕ WL → resolves geometry
-
-This acts as a **constraint intersection**, producing a stable reconstruction.
-
----
-
-## Phase-Lock Condition
-
-cosθ ≥ 1/√(1² + 1²) ≈ 0.707  
-→ 45° alignment 📐
-
-Interpretation:
-- balanced constraints  
-- stable gradients  
-- bounded reconstruction error  
-
----
-
-## Expected Results
-
-After ~500 epochs:
-
-- metric f(r) matches BTZ profile  
-- reconstruction error ≲ 0.5%  
-- loss stabilizes  
-- gradients remain well-behaved  
-
----
-
-## Run in Colab
-
-Open directly:
-
-https://colab.research.google.com/github/YOUR_USERNAME/btz-phase-lock/blob/main/btz_phase_lock_colab.py
-
----
-
-## Outputs
-
-The notebook generates:
-
-- EE curve: predicted vs true  
-- WL curve: predicted vs true  
-- metric f(r): learned vs BTZ  
-- training loss curves  
-- reconstruction error  
-
----
-
-## Structure
-
-btz_phase_lock_colab.py  
-README.md
-
----
-
-## Notes
-
-- This is a **toy demo**, not a full reproduction  
-- Uses synthetic observables for speed and clarity  
-- Designed for quick experimentation + sharing  
-
----
-
-## Summary
-
-constraint → intersection → reconstruction  
-
-EE ⊕ WL → stable geometry  
-signal remains accessible  
+Core idea:
+multiple probes (EE ⊕ WL ⊕ GEO)  
+→ constrain geometry  
+→ signal > noise  
 
 45° 📐
 
 ---
 
-## License
+## 🚀 Start Here
 
-MIT (or your choice)
+### v19 — Minimal Separating Probe
+Adds derivative constraint to match **slope (structure)**, not just values.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v19_minimal_separating_probe.ipynb)
+
+---
+
+### v18.1 — Multi-Slice Discriminator
+Train on multiple slices → test held-out interpolation.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v18_1_multislice_discriminator.ipynb)
+
+---
+
+### v17 — Indistinguishable Solutions
+Different solutions produce nearly identical observables.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v17_indistinguishable.ipynb)
+
+---
+
+### v14–v16 — Branching → Dual Solutions → Probe Fit
+
+- v14: branching appears  
+- v15: dual/global solutions  
+- v16: probe fitting improves alignment  
+
+[Open repo notebooks](https://github.com/thinkthoughts/btz-phase-lock)
+
+---
+
+## 🧠 Progression

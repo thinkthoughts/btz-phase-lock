@@ -44,7 +44,7 @@ Adds derivative constraint to match **slope (structure)**, not just values.
 
 ---
 
-<h2>📊 Results (v19)</h2>
+<h2>📊 Results (v19 detail)</h2>
 
 <p><b>Held-out test:</b><br/>
 train on c = 0.00, 0.30 → predict c = 0.16

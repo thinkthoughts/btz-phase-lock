@@ -1,7 +1,3 @@
-<h1 align="center">
-  minimal identifying set → EE ⊕ GEO ⊕ derivative (WL not required)
-</h1>
-
 <p align="center">
   <img src="./banner.png" alt="btz-phase-lock banner" />
 </p>

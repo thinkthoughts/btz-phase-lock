@@ -45,3 +45,66 @@ Different solutions produce nearly identical observables.
 ---
 
 ## 🧠 Progression
+
+single probe → partial  
+
+EE ⊕ WL → better  
+
+EE ⊕ WL ⊕ GEO → stable reconstruction  
+
+v17 → indistinguishable branches  
+
+v18 → multi-slice reduces ambiguity  
+
+v19 → derivative constraint matches slope (structure)  
+
+---
+
+## 🔬 Key Result
+
+v19 shows:
+
+- observables match ✔  
+- metric reconstructs ✔  
+- derivative matches (new) ✔  
+
+→ value fit → shape fit  
+→ “looks right” ≠ “is right” → now constrained  
+
+---
+
+## 📊 Example (v19)
+
+- held-out slice: c = 0.16  
+- train: c = 0.00, 0.30  
+
+results:
+
+- EE / WL / GEO align  
+- metric recovers  
+- derivative aligns  
+
+---
+
+## 🧭 Roadmap
+
+- v19 → minimal separating probe  
+- v20 → probe sweep (which constraint matters most?)  
+- v21 → robustness (noise / seeds / slices)  
+
+---
+
+## ⚙️ Notes
+
+- synthetic targets (demo-level)
+- minimal MLP (tanh)
+- constraint-first, not architecture-first
+
+---
+
+## 🌿
+
+constraint → signal > noise  
+structure → stability  
+
+45° 📐

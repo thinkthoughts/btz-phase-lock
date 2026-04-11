@@ -15,18 +15,30 @@
 \usepackage{enumitem}
 \usepackage{float}
 
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
 \title{\textbf{Minimal Identifying Sets for Geometry Reconstruction}\\
 under Multi-Probe Constraints}
-\author{Dan Hawkley}
+
+\author{
+Dan Hawkley \\
+\href{https://github.com/thinkthoughts/btz-phase-lock}{Project repository}
+}
+
 \date{\today}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We study constraint-first reconstruction using a shared multi-slice neural surrogate trained on multiple probe observables. Prior results show that value matching alone leaves residual ambiguity: distinct geometries can fit the same observables. We introduce derivative-sensitive constraints to enforce local structure and perform a systematic probe sweep over subsets of three observables—EE, WL, and GEO.
+We study constraint-first reconstruction using a shared multi-slice neural surrogate trained on multiple probe observables. Prior results show that value matching alone leaves residual ambiguity: distinct geometries can fit the same observables. We introduce derivative-sensitive constraints to enforce local structure and perform a systematic probe sweep over subsets of three observables---EE, WL, and GEO.
 
-In a synthetic held-out setting, we find that the minimal identifying set is EE $\oplus$ GEO $\oplus$ derivative. This configuration achieves the lowest held-out metric error, while the full probe stack is not minimal and WL is not required for optimal reconstruction. The results show that derivative information is necessary for structure, and that identifying sets can be strictly smaller than the available probe family.
+In a synthetic held-out setting, we find that the minimal identifying set is EE $\oplus$ GEO $\oplus$ derivative. This configuration achieves the lowest held-out metric error, while the full probe stack is not minimal and WL is not required for optimal reconstruction. The results show that derivative information is necessary for structure, and that identifying sets can be strictly smaller than the available probe family. This provides a concrete empirical example of minimal identifying sets under multi-probe constraints.
 \end{abstract}
 
 \section{Introduction}
@@ -46,6 +58,9 @@ Our answer, in this setup, is:
 \boxed{\text{EE} \oplus \text{GEO} \oplus d}
 \]
 
+The corresponding code and experiments are available at:
+\url{https://github.com/thinkthoughts/btz-phase-lock}.
+
 \section{Probe Sweep (v20)}
 
 We evaluate probe subsets using:
@@ -53,6 +68,8 @@ We evaluate probe subsets using:
 \item held-out metric MSE
 \item held-out derivative MSE
 \end{itemize}
+
+These metrics distinguish value fit from structural fit across probe configurations.
 
 \begin{figure}[H]
 \centering
@@ -71,14 +88,19 @@ We evaluate probe subsets using:
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.32\textwidth}
+\centering
 \includegraphics[width=\textwidth]{figures/v20_best_observables.png}
 \caption{Observables}
 \end{subfigure}
+\hfill
 \begin{subfigure}{0.32\textwidth}
+\centering
 \includegraphics[width=\textwidth]{figures/v20_best_metric.png}
 \caption{Metric}
 \end{subfigure}
+\hfill
 \begin{subfigure}{0.32\textwidth}
+\centering
 \includegraphics[width=\textwidth]{figures/v20_best_derivative.png}
 \caption{Derivative}
 \end{subfigure}
@@ -87,15 +109,18 @@ We evaluate probe subsets using:
 
 \section{Conclusion}
 
-We show:
-\begin{itemize}
-\item value fit alone is insufficient
-\item derivative is necessary for structure
-\item minimal identifying set is smaller than full probe set
-\end{itemize}
+We show that value fit alone is insufficient for geometry reconstruction, and that derivative information is required to recover local structure.
 
+In this setup, the minimal identifying set is strictly smaller than the full probe family:
 \[
 \boxed{\text{EE} \oplus \text{GEO} \oplus d}
 \]
+
+This establishes a concrete example where constraint selection, rather than probe accumulation, determines successful reconstruction.
+
+\vspace{1em}
+\noindent\textbf{Code and notebooks.} \\
+Repo: \url{https://github.com/thinkthoughts/btz-phase-lock} \\
+v20 Colab: \url{https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v20_probe_sweep.ipynb}
 
 \end{document}
